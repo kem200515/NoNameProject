@@ -1,0 +1,844 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Secrect_DevelopmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChiTietHoaDon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SanPhamId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NgayBan" Type="datetime" />
+          <Property Name="SoTam" Type="int" />
+          <Property Name="KichThuoc" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="DonGia" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Secrect_Development.dbo.H_NhapXuatTon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="H_NhapXuatTon">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedOn" />
+            <PropertyRef Name="UpdatedBy" />
+            <PropertyRef Name="UpdatedOn" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TenHang" Type="nchar" MaxLength="10" />
+          <Property Name="Kho" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoTamTonDau" Type="int" />
+          <Property Name="SoTonDau" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamNhap" Type="int" />
+          <Property Name="SoNhap" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamNhapNoiBo" Type="int" />
+          <Property Name="SoNhapNoiBo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatBanTrucTiep" Type="int" />
+          <Property Name="SoXuatBanTrucTiep" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatBanGiaoCONT" Type="int" />
+          <Property Name="SoXuatBanGiaoCONT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatNoiBo" Type="int" />
+          <Property Name="SoXuatNoiBo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamDieuChinhChenhLech" Type="int" />
+          <Property Name="SoDieuChinhChenhLech" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamTonCuoi" Type="int" />
+          <Property Name="SoTonCuoi" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Secrect_Development.dbo.NhapXuatTon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NhapXuatTon">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedOn" />
+            <PropertyRef Name="UpdatedBy" />
+            <PropertyRef Name="UpdatedOn" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TenHang" Type="nchar" MaxLength="10" />
+          <Property Name="Kho" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoTamTonDau" Type="int" />
+          <Property Name="SoTonDau" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamNhap" Type="int" />
+          <Property Name="SoNhap" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamNhapNoiBo" Type="int" />
+          <Property Name="SoNhapNoiBo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatBanTrucTiep" Type="int" />
+          <Property Name="SoXuatBanTrucTiep" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatBanGiaoCONT" Type="int" />
+          <Property Name="SoXuatBanGiaoCONT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatNoiBo" Type="int" />
+          <Property Name="SoXuatNoiBo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamDieuChinhChenhLech" Type="int" />
+          <Property Name="SoDieuChinhChenhLech" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamTonCuoi" Type="int" />
+          <Property Name="SoTonCuoi" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Secrect_Development.dbo.QuanLyHoaDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="QuanLyHoaDon">
+          <Key>
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedOn" />
+            <PropertyRef Name="UpdatedBy" />
+            <PropertyRef Name="UpdatedOn" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" />
+          <Property Name="SanPhamId" Type="uniqueidentifier" />
+          <Property Name="ChiTietHoaDonId" Type="uniqueidentifier" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuanLySanPham">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SanPhamId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Loai" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayThucHien" Type="datetime" />
+          <Property Name="SoTam" Type="int" />
+          <Property Name="KichThuoc" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SanPham">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TenHang" Type="nvarchar" MaxLength="250" />
+          <Property Name="Kho" Type="nvarchar" MaxLength="50" />
+          <Property Name="DonGia" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_QuanLyHoaDon_ChiTietHoaDon">
+          <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="0..1" />
+          <End Role="QuanLyHoaDon" Type="Self.QuanLyHoaDon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietHoaDon">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuanLyHoaDon">
+              <PropertyRef Name="ChiTietHoaDonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuanLyHoaDon_SanPham">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+          <End Role="QuanLyHoaDon" Type="Self.QuanLyHoaDon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuanLyHoaDon">
+              <PropertyRef Name="SanPhamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuanLySanPham_SanPham">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+          <End Role="QuanLySanPham" Type="Self.QuanLySanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuanLySanPham">
+              <PropertyRef Name="SanPhamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="Secrect_DevelopmentModelStoreContainer">
+          <EntitySet Name="ChiTietHoaDon" EntityType="Self.ChiTietHoaDon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuanLySanPham" EntityType="Self.QuanLySanPham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="H_NhapXuatTon" EntityType="Self.H_NhapXuatTon" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [H_NhapXuatTon].[Id] AS [Id], 
+    [H_NhapXuatTon].[TenHang] AS [TenHang], 
+    [H_NhapXuatTon].[Kho] AS [Kho], 
+    [H_NhapXuatTon].[SoTamTonDau] AS [SoTamTonDau], 
+    [H_NhapXuatTon].[SoTonDau] AS [SoTonDau], 
+    [H_NhapXuatTon].[SoTamNhap] AS [SoTamNhap], 
+    [H_NhapXuatTon].[SoNhap] AS [SoNhap], 
+    [H_NhapXuatTon].[SoTamNhapNoiBo] AS [SoTamNhapNoiBo], 
+    [H_NhapXuatTon].[SoNhapNoiBo] AS [SoNhapNoiBo], 
+    [H_NhapXuatTon].[SoTamXuatBanTrucTiep] AS [SoTamXuatBanTrucTiep], 
+    [H_NhapXuatTon].[SoXuatBanTrucTiep] AS [SoXuatBanTrucTiep], 
+    [H_NhapXuatTon].[SoTamXuatBanGiaoCONT] AS [SoTamXuatBanGiaoCONT], 
+    [H_NhapXuatTon].[SoXuatBanGiaoCONT] AS [SoXuatBanGiaoCONT], 
+    [H_NhapXuatTon].[SoTamXuatNoiBo] AS [SoTamXuatNoiBo], 
+    [H_NhapXuatTon].[SoXuatNoiBo] AS [SoXuatNoiBo], 
+    [H_NhapXuatTon].[SoTamDieuChinhChenhLech] AS [SoTamDieuChinhChenhLech], 
+    [H_NhapXuatTon].[SoDieuChinhChenhLech] AS [SoDieuChinhChenhLech], 
+    [H_NhapXuatTon].[SoTamTonCuoi] AS [SoTamTonCuoi], 
+    [H_NhapXuatTon].[SoTonCuoi] AS [SoTonCuoi], 
+    [H_NhapXuatTon].[CreatedBy] AS [CreatedBy], 
+    [H_NhapXuatTon].[CreatedOn] AS [CreatedOn], 
+    [H_NhapXuatTon].[UpdatedBy] AS [UpdatedBy], 
+    [H_NhapXuatTon].[UpdatedOn] AS [UpdatedOn], 
+    [H_NhapXuatTon].[Status] AS [Status]
+    FROM [dbo].[H_NhapXuatTon] AS [H_NhapXuatTon]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NhapXuatTon" EntityType="Self.NhapXuatTon" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NhapXuatTon].[Id] AS [Id], 
+    [NhapXuatTon].[TenHang] AS [TenHang], 
+    [NhapXuatTon].[Kho] AS [Kho], 
+    [NhapXuatTon].[SoTamTonDau] AS [SoTamTonDau], 
+    [NhapXuatTon].[SoTonDau] AS [SoTonDau], 
+    [NhapXuatTon].[SoTamNhap] AS [SoTamNhap], 
+    [NhapXuatTon].[SoNhap] AS [SoNhap], 
+    [NhapXuatTon].[SoTamNhapNoiBo] AS [SoTamNhapNoiBo], 
+    [NhapXuatTon].[SoNhapNoiBo] AS [SoNhapNoiBo], 
+    [NhapXuatTon].[SoTamXuatBanTrucTiep] AS [SoTamXuatBanTrucTiep], 
+    [NhapXuatTon].[SoXuatBanTrucTiep] AS [SoXuatBanTrucTiep], 
+    [NhapXuatTon].[SoTamXuatBanGiaoCONT] AS [SoTamXuatBanGiaoCONT], 
+    [NhapXuatTon].[SoXuatBanGiaoCONT] AS [SoXuatBanGiaoCONT], 
+    [NhapXuatTon].[SoTamXuatNoiBo] AS [SoTamXuatNoiBo], 
+    [NhapXuatTon].[SoXuatNoiBo] AS [SoXuatNoiBo], 
+    [NhapXuatTon].[SoTamDieuChinhChenhLech] AS [SoTamDieuChinhChenhLech], 
+    [NhapXuatTon].[SoDieuChinhChenhLech] AS [SoDieuChinhChenhLech], 
+    [NhapXuatTon].[SoTamTonCuoi] AS [SoTamTonCuoi], 
+    [NhapXuatTon].[SoTonCuoi] AS [SoTonCuoi], 
+    [NhapXuatTon].[CreatedBy] AS [CreatedBy], 
+    [NhapXuatTon].[CreatedOn] AS [CreatedOn], 
+    [NhapXuatTon].[UpdatedBy] AS [UpdatedBy], 
+    [NhapXuatTon].[UpdatedOn] AS [UpdatedOn], 
+    [NhapXuatTon].[Status] AS [Status]
+    FROM [dbo].[NhapXuatTon] AS [NhapXuatTon]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="QuanLyHoaDon" EntityType="Self.QuanLyHoaDon" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [QuanLyHoaDon].[Id] AS [Id], 
+    [QuanLyHoaDon].[SanPhamId] AS [SanPhamId], 
+    [QuanLyHoaDon].[ChiTietHoaDonId] AS [ChiTietHoaDonId], 
+    [QuanLyHoaDon].[CreatedBy] AS [CreatedBy], 
+    [QuanLyHoaDon].[CreatedOn] AS [CreatedOn], 
+    [QuanLyHoaDon].[UpdatedBy] AS [UpdatedBy], 
+    [QuanLyHoaDon].[UpdatedOn] AS [UpdatedOn], 
+    [QuanLyHoaDon].[Status] AS [Status]
+    FROM [dbo].[QuanLyHoaDon] AS [QuanLyHoaDon]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_QuanLyHoaDon_ChiTietHoaDon" Association="Self.FK_QuanLyHoaDon_ChiTietHoaDon">
+            <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
+            <End Role="QuanLyHoaDon" EntitySet="QuanLyHoaDon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuanLyHoaDon_SanPham" Association="Self.FK_QuanLyHoaDon_SanPham">
+            <End Role="SanPham" EntitySet="SanPham" />
+            <End Role="QuanLyHoaDon" EntitySet="QuanLyHoaDon" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuanLySanPham_SanPham" Association="Self.FK_QuanLySanPham_SanPham">
+            <End Role="SanPham" EntitySet="SanPham" />
+            <End Role="QuanLySanPham" EntitySet="QuanLySanPham" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Secrect_DevelopmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ChiTietHoaDon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SanPhamId" Type="Guid" Nullable="false" />
+          <Property Name="NgayBan" Type="DateTime" Precision="3" />
+          <Property Name="SoTam" Type="Int32" />
+          <Property Name="KichThuoc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="DonGia" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="QuanLyHoaDons" Relationship="Self.FK_QuanLyHoaDon_ChiTietHoaDon" FromRole="ChiTietHoaDon" ToRole="QuanLyHoaDon" />
+        </EntityType>
+        <EntityType Name="QuanLySanPham">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SanPhamId" Type="Guid" Nullable="false" />
+          <Property Name="Loai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayThucHien" Type="DateTime" Precision="3" />
+          <Property Name="SoTam" Type="Int32" />
+          <Property Name="KichThuoc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SanPham" Relationship="Self.FK_QuanLySanPham_SanPham" FromRole="QuanLySanPham" ToRole="SanPham" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="SanPham">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TenHang" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Kho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DonGia" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="QuanLySanPhams" Relationship="Self.FK_QuanLySanPham_SanPham" FromRole="SanPham" ToRole="QuanLySanPham" />
+          <NavigationProperty Name="QuanLyHoaDons" Relationship="Self.FK_QuanLyHoaDon_SanPham" FromRole="SanPham" ToRole="QuanLyHoaDon" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoleID" Type="Guid" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="H_NhapXuatTon">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedOn" />
+            <PropertyRef Name="UpdatedBy" />
+            <PropertyRef Name="UpdatedOn" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TenHang" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Kho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoTamTonDau" Type="Int32" />
+          <Property Name="SoTonDau" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamNhap" Type="Int32" />
+          <Property Name="SoNhap" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamNhapNoiBo" Type="Int32" />
+          <Property Name="SoNhapNoiBo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatBanTrucTiep" Type="Int32" />
+          <Property Name="SoXuatBanTrucTiep" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatBanGiaoCONT" Type="Int32" />
+          <Property Name="SoXuatBanGiaoCONT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatNoiBo" Type="Int32" />
+          <Property Name="SoXuatNoiBo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamDieuChinhChenhLech" Type="Int32" />
+          <Property Name="SoDieuChinhChenhLech" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamTonCuoi" Type="Int32" />
+          <Property Name="SoTonCuoi" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NhapXuatTon">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedOn" />
+            <PropertyRef Name="UpdatedBy" />
+            <PropertyRef Name="UpdatedOn" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TenHang" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Kho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoTamTonDau" Type="Int32" />
+          <Property Name="SoTonDau" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamNhap" Type="Int32" />
+          <Property Name="SoNhap" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamNhapNoiBo" Type="Int32" />
+          <Property Name="SoNhapNoiBo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatBanTrucTiep" Type="Int32" />
+          <Property Name="SoXuatBanTrucTiep" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatBanGiaoCONT" Type="Int32" />
+          <Property Name="SoXuatBanGiaoCONT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamXuatNoiBo" Type="Int32" />
+          <Property Name="SoXuatNoiBo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamDieuChinhChenhLech" Type="Int32" />
+          <Property Name="SoDieuChinhChenhLech" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SoTamTonCuoi" Type="Int32" />
+          <Property Name="SoTonCuoi" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuanLyHoaDon">
+          <Key>
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedOn" />
+            <PropertyRef Name="UpdatedBy" />
+            <PropertyRef Name="UpdatedOn" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Id" Type="Guid" />
+          <Property Name="SanPhamId" Type="Guid" />
+          <Property Name="ChiTietHoaDonId" Type="Guid" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ChiTietHoaDon" Relationship="Self.FK_QuanLyHoaDon_ChiTietHoaDon" FromRole="QuanLyHoaDon" ToRole="ChiTietHoaDon" />
+          <NavigationProperty Name="SanPham" Relationship="Self.FK_QuanLyHoaDon_SanPham" FromRole="QuanLyHoaDon" ToRole="SanPham" />
+        </EntityType>
+        <Association Name="FK_QuanLyHoaDon_ChiTietHoaDon">
+          <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="0..1" />
+          <End Role="QuanLyHoaDon" Type="Self.QuanLyHoaDon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietHoaDon">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuanLyHoaDon">
+              <PropertyRef Name="ChiTietHoaDonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuanLySanPham_SanPham">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+          <End Role="QuanLySanPham" Type="Self.QuanLySanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuanLySanPham">
+              <PropertyRef Name="SanPhamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuanLyHoaDon_SanPham">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+          <End Role="QuanLyHoaDon" Type="Self.QuanLyHoaDon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuanLyHoaDon">
+              <PropertyRef Name="SanPhamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Secrect_DevelopmentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChiTietHoaDons" EntityType="Self.ChiTietHoaDon" />
+          <EntitySet Name="QuanLySanPhams" EntityType="Self.QuanLySanPham" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="H_NhapXuatTon" EntityType="Self.H_NhapXuatTon" />
+          <EntitySet Name="NhapXuatTons" EntityType="Self.NhapXuatTon" />
+          <EntitySet Name="QuanLyHoaDons" EntityType="Self.QuanLyHoaDon" />
+          <AssociationSet Name="FK_QuanLyHoaDon_ChiTietHoaDon" Association="Self.FK_QuanLyHoaDon_ChiTietHoaDon">
+            <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDons" />
+            <End Role="QuanLyHoaDon" EntitySet="QuanLyHoaDons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuanLySanPham_SanPham" Association="Self.FK_QuanLySanPham_SanPham">
+            <End Role="SanPham" EntitySet="SanPhams" />
+            <End Role="QuanLySanPham" EntitySet="QuanLySanPhams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuanLyHoaDon_SanPham" Association="Self.FK_QuanLyHoaDon_SanPham">
+            <End Role="SanPham" EntitySet="SanPhams" />
+            <End Role="QuanLyHoaDon" EntitySet="QuanLyHoaDons" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Secrect_DevelopmentModelStoreContainer" CdmEntityContainer="Secrect_DevelopmentEntities">
+          <EntitySetMapping Name="ChiTietHoaDons">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.ChiTietHoaDon">
+              <MappingFragment StoreEntitySet="ChiTietHoaDon">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SanPhamId" ColumnName="SanPhamId" />
+                <ScalarProperty Name="NgayBan" ColumnName="NgayBan" />
+                <ScalarProperty Name="SoTam" ColumnName="SoTam" />
+                <ScalarProperty Name="KichThuoc" ColumnName="KichThuoc" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuanLySanPhams">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.QuanLySanPham">
+              <MappingFragment StoreEntitySet="QuanLySanPham">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SanPhamId" ColumnName="SanPhamId" />
+                <ScalarProperty Name="Loai" ColumnName="Loai" />
+                <ScalarProperty Name="NgayThucHien" ColumnName="NgayThucHien" />
+                <ScalarProperty Name="SoTam" ColumnName="SoTam" />
+                <ScalarProperty Name="KichThuoc" ColumnName="KichThuoc" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SanPhams">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.SanPham">
+              <MappingFragment StoreEntitySet="SanPham">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+                <ScalarProperty Name="Kho" ColumnName="Kho" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="H_NhapXuatTon">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.H_NhapXuatTon">
+              <MappingFragment StoreEntitySet="H_NhapXuatTon">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+                <ScalarProperty Name="Kho" ColumnName="Kho" />
+                <ScalarProperty Name="SoTamTonDau" ColumnName="SoTamTonDau" />
+                <ScalarProperty Name="SoTonDau" ColumnName="SoTonDau" />
+                <ScalarProperty Name="SoTamNhap" ColumnName="SoTamNhap" />
+                <ScalarProperty Name="SoNhap" ColumnName="SoNhap" />
+                <ScalarProperty Name="SoTamNhapNoiBo" ColumnName="SoTamNhapNoiBo" />
+                <ScalarProperty Name="SoNhapNoiBo" ColumnName="SoNhapNoiBo" />
+                <ScalarProperty Name="SoTamXuatBanTrucTiep" ColumnName="SoTamXuatBanTrucTiep" />
+                <ScalarProperty Name="SoXuatBanTrucTiep" ColumnName="SoXuatBanTrucTiep" />
+                <ScalarProperty Name="SoTamXuatBanGiaoCONT" ColumnName="SoTamXuatBanGiaoCONT" />
+                <ScalarProperty Name="SoXuatBanGiaoCONT" ColumnName="SoXuatBanGiaoCONT" />
+                <ScalarProperty Name="SoTamXuatNoiBo" ColumnName="SoTamXuatNoiBo" />
+                <ScalarProperty Name="SoXuatNoiBo" ColumnName="SoXuatNoiBo" />
+                <ScalarProperty Name="SoTamDieuChinhChenhLech" ColumnName="SoTamDieuChinhChenhLech" />
+                <ScalarProperty Name="SoDieuChinhChenhLech" ColumnName="SoDieuChinhChenhLech" />
+                <ScalarProperty Name="SoTamTonCuoi" ColumnName="SoTamTonCuoi" />
+                <ScalarProperty Name="SoTonCuoi" ColumnName="SoTonCuoi" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhapXuatTons">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.NhapXuatTon">
+              <MappingFragment StoreEntitySet="NhapXuatTon">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+                <ScalarProperty Name="Kho" ColumnName="Kho" />
+                <ScalarProperty Name="SoTamTonDau" ColumnName="SoTamTonDau" />
+                <ScalarProperty Name="SoTonDau" ColumnName="SoTonDau" />
+                <ScalarProperty Name="SoTamNhap" ColumnName="SoTamNhap" />
+                <ScalarProperty Name="SoNhap" ColumnName="SoNhap" />
+                <ScalarProperty Name="SoTamNhapNoiBo" ColumnName="SoTamNhapNoiBo" />
+                <ScalarProperty Name="SoNhapNoiBo" ColumnName="SoNhapNoiBo" />
+                <ScalarProperty Name="SoTamXuatBanTrucTiep" ColumnName="SoTamXuatBanTrucTiep" />
+                <ScalarProperty Name="SoXuatBanTrucTiep" ColumnName="SoXuatBanTrucTiep" />
+                <ScalarProperty Name="SoTamXuatBanGiaoCONT" ColumnName="SoTamXuatBanGiaoCONT" />
+                <ScalarProperty Name="SoXuatBanGiaoCONT" ColumnName="SoXuatBanGiaoCONT" />
+                <ScalarProperty Name="SoTamXuatNoiBo" ColumnName="SoTamXuatNoiBo" />
+                <ScalarProperty Name="SoXuatNoiBo" ColumnName="SoXuatNoiBo" />
+                <ScalarProperty Name="SoTamDieuChinhChenhLech" ColumnName="SoTamDieuChinhChenhLech" />
+                <ScalarProperty Name="SoDieuChinhChenhLech" ColumnName="SoDieuChinhChenhLech" />
+                <ScalarProperty Name="SoTamTonCuoi" ColumnName="SoTamTonCuoi" />
+                <ScalarProperty Name="SoTonCuoi" ColumnName="SoTonCuoi" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuanLyHoaDons">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.QuanLyHoaDon">
+              <MappingFragment StoreEntitySet="QuanLyHoaDon">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SanPhamId" ColumnName="SanPhamId" />
+                <ScalarProperty Name="ChiTietHoaDonId" ColumnName="ChiTietHoaDonId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Secrect_DevelopmentModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Secrect_DevelopmentModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Secrect_DevelopmentModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Secrect_DevelopmentModel.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Secrect_DevelopmentModel.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Secrect_DevelopmentModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Secrect_DevelopmentModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

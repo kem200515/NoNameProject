@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7cdc6b5b94ba4a94bda30ec3ea68f942" Name="Diagram1">
+        <EntityTypeShape EntityType="Secrect_DevelopmentModel.ChiTietHoaDon" Width="1.5" PointX="3.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Secrect_DevelopmentModel.QuanLySanPham" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Secrect_DevelopmentModel.Role" Width="1.5" PointX="5.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Secrect_DevelopmentModel.SanPham" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Secrect_DevelopmentModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Secrect_DevelopmentModel.User" Width="1.5" PointX="8" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Secrect_DevelopmentModel.H_NhapXuatTon" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Secrect_DevelopmentModel.NhapXuatTon" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Secrect_DevelopmentModel.QuanLyHoaDon" Width="1.5" PointX="6" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="Secrect_DevelopmentModel.FK_QuanLyHoaDon_ChiTietHoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="Secrect_DevelopmentModel.FK_QuanLySanPham_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="Secrect_DevelopmentModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Secrect_DevelopmentModel.FK_QuanLyHoaDon_SanPham" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
