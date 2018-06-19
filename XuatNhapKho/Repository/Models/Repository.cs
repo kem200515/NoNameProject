@@ -4,7 +4,7 @@ using System.Data.Linq;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Xamlized.Repositories
+namespace Repository.Models
 {
     public class Repository<T> : IRepository<T> where T : class
     {
@@ -14,26 +14,24 @@ namespace Xamlized.Repositories
         {
             DataTable = dataContext.GetTable<T>();
         }
+        public void Delete(T entity)
+        {
+            DataTable.DeleteOnSubmit(entity);
+        }
+
+        public IQueryable<T> GetAll()
+        {
+            return DataTable;
+        }
 
         public void Insert(T entity)
         {
             DataTable.InsertOnSubmit(entity);
         }
 
-        public void Delete(T entity)
-        {
-            DataTable.DeleteOnSubmit(entity);
-        }
-
-        public IQueryable<T> Search
-              (Expression<Func<T, bool>> predicate)
+        public IQueryable<T> Search(Expression<Func<T, bool>> predicate)
         {
             return DataTable.Where(predicate);
-        }
-
-        public IQueryable<T> GetAll()
-        {
-            return DataTable;
         }
     }
 }
