@@ -56,6 +56,8 @@
     <Compile Include="H_NhapXuatTon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Interface\IRepository.cs" />
+    <Compile Include="Interface\IUnitOfWork.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,6 +73,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Repository.cs" />
+    <Compile Include="Models\UnitOfWork.cs" />
     <Compile Include="NhapXuatTon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -120,12 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Repository\Repository.csproj">
-      <Project>{B64DFCE8-5039-4693-99EB-00C078CB4801}</Project>
-      <Name>Repository</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

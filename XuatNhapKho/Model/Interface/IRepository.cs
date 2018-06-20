@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Repository.Interface
+namespace Database.Interface
 {
     public interface IRepository<T>
 
