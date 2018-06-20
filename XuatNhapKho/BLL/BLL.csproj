@@ -40,10 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Implement\BaseBLL.cs" />
+    <Compile Include="BLL\Implement\UserBLL.cs" />
+    <Compile Include="BLL\Interface\IUserBLL.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
+    <ProjectReference Include="..\Model\Database.csproj">
+      <Project>{dfb30ae6-e602-4c41-b862-df0ae32af3f8}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
