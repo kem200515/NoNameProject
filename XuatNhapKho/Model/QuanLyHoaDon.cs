@@ -14,7 +14,7 @@ namespace Model
     
     public partial class QuanLyHoaDon
     {
-        public Nullable<System.Guid> Id { get; set; }
+        public System.Guid Id { get; set; }
         public Nullable<System.Guid> SanPhamId { get; set; }
         public Nullable<System.Guid> ChiTietHoaDonId { get; set; }
         public System.Guid CreatedBy { get; set; }
@@ -22,8 +22,5 @@ namespace Model
         public System.Guid UpdatedBy { get; set; }
         public System.DateTime UpdatedOn { get; set; }
         public int Status { get; set; }
-    
-        public virtual ChiTietHoaDon ChiTietHoaDon { get; set; }
-        public virtual SanPham SanPham { get; set; }
     }
 }

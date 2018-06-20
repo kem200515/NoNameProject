@@ -14,13 +14,6 @@ namespace Model
     
     public partial class SanPham
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SanPham()
-        {
-            this.QuanLySanPhams = new HashSet<QuanLySanPham>();
-            this.QuanLyHoaDons = new HashSet<QuanLyHoaDon>();
-        }
-    
         public System.Guid Id { get; set; }
         public string TenHang { get; set; }
         public string Kho { get; set; }
@@ -30,10 +23,5 @@ namespace Model
         public System.Guid UpdatedBy { get; set; }
         public System.DateTime UpdatedOn { get; set; }
         public int Status { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<QuanLySanPham> QuanLySanPhams { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<QuanLyHoaDon> QuanLyHoaDons { get; set; }
     }
 }

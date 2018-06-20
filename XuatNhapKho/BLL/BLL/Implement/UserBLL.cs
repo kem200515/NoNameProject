@@ -18,6 +18,8 @@ namespace BLL.BLL.Implement
         {
             User user = BaseBLL<User, UserModel>.ConvertFromModel(userModel);
             unitOfWork.StudentRepository.Insert(user);
+            unitOfWork.Save();
+            unitOfWork.Dispose();
         }
     }
 }

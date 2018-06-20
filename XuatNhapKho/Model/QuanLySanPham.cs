@@ -25,7 +25,5 @@ namespace Model
         public System.Guid UpdatedBy { get; set; }
         public System.DateTime UpdatedOn { get; set; }
         public int Status { get; set; }
-    
-        public virtual SanPham SanPham { get; set; }
     }
 }

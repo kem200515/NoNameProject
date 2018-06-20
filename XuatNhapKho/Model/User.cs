@@ -19,13 +19,11 @@ namespace Model
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public System.Guid RoleID { get; set; }
+        public Nullable<System.Guid> RoleID { get; set; }
         public System.Guid CreatedBy { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public System.Guid UpdatedBy { get; set; }
         public System.DateTime UpdatedOn { get; set; }
         public int Status { get; set; }
-    
-        public virtual Role Role { get; set; }
     }
 }
