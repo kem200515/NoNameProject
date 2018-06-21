@@ -9,7 +9,14 @@ namespace Model.Interface
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<User> StudentRepository { get; }
+        IRepository<User> UserRepository { get; }
+        IRepository<Role> RoleRepository { get; }
+        IRepository<SanPham> SanPhamRepository { get; }
+        IRepository<QuanLySanPham> QuanLySanPhamRepository { get; }
+        IRepository<QuanLyHoaDon> QuanLyHoaDonRepository { get; }
+        IRepository<ChiTietHoaDon> ChiTietHoaDonRepository { get; }
+        IRepository<ChiTien> ChiTienRepository { get; }
+
         void Save();
     }
 }

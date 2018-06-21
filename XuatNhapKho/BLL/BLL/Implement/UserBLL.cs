@@ -1,5 +1,6 @@
 ﻿using BLL.BLL.Interface;
 using BLL.Models;
+using Database.Interface;
 using Model;
 using Model.Models;
 using System;
@@ -12,14 +13,20 @@ namespace BLL.BLL.Implement
 {
     public class UserBLL : IUserBLL
     {
-        private UnitOfWork unitOfWork = new UnitOfWork();
+        private UnitOfWork _unitOfWork;
+        private IRepository<User> _userRepository;
+        public UserBLL()
+        {
+            if (_unitOfWork == null)
+                _unitOfWork = new UnitOfWork();
+            _userRepository = _unitOfWork.UserRepository;
+        }
 
         public void SaveUser(UserModel userModel)
         {
             User user = BaseBLL<User, UserModel>.ConvertFromModel(userModel);
-            unitOfWork.StudentRepository.Insert(user);
-            unitOfWork.Save();
-            unitOfWork.Dispose();
+            _userRepository.Insert(user);
+            _unitOfWork.Save();
         }
     }
 }

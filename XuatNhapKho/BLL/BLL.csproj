@@ -44,6 +44,12 @@
     <Compile Include="BLL\Implement\UserBLL.cs" />
     <Compile Include="BLL\Interface\IUserBLL.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\ChiTienModel.cs" />
+    <Compile Include="Models\ChiTietHoaDonModel.cs" />
+    <Compile Include="Models\QuanLyHoaDonModel.cs" />
+    <Compile Include="Models\QuanLySanPhamModel.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\SanPhamModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

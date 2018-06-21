@@ -14,6 +14,7 @@
         <EntityTypeShape EntityType="Secrect_DevelopmentModel.SanPham" Width="1.5" PointX="2.75" PointY="7.75" />
         <EntityTypeShape EntityType="Secrect_DevelopmentModel.sysdiagram" Width="1.5" PointX="8.75" PointY="0.75" />
         <EntityTypeShape EntityType="Secrect_DevelopmentModel.User" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Secrect_DevelopmentModel.ChiTien" Width="1.5" PointX="5.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
