@@ -32,7 +32,7 @@ namespace XuatNhapKhoWF
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 var content = new StringContent(JsonConvert.SerializeObject(userModel), Encoding.UTF8, "application/json");
-                var response = await client.PostAsync(APIHost, content);
+                var response = await client.PostAsync(APIHost + "/User/InsertUser/", content);
                 MessageBox.Show("Success");
             }
         }
