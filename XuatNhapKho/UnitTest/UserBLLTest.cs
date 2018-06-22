@@ -1,7 +1,7 @@
 ﻿using System;
 using BLL.BLL.Implement;
-using BLL.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Models.Models;
 
 namespace UnitTest
 {

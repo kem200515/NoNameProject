@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{87759DBD-F643-4C0A-BC12-35CE32A3C0B3}</ProjectGuid>
+    <ProjectGuid>{151DBF3B-38FB-4695-9E2A-064906A7DB63}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BLL</RootNamespace>
-    <AssemblyName>BLL</AssemblyName>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,21 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Implement\BaseBLL.cs" />
-    <Compile Include="BLL\Implement\UserBLL.cs" />
-    <Compile Include="BLL\Interface\IUserBLL.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\ChiTienModel.cs" />
+    <Compile Include="Models\ChiTietHoaDonModel.cs" />
+    <Compile Include="Models\QuanLyHoaDonModel.cs" />
+    <Compile Include="Models\QuanLySanPhamModel.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\SanPhamModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{151dbf3b-38fb-4695-9e2a-064906a7db63}</Project>
-      <Name>Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Database.csproj">
-      <Project>{dfb30ae6-e602-4c41-b862-df0ae32af3f8}</Project>
-      <Name>Database</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
