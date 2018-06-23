@@ -1,0 +1,18 @@
+﻿using Models.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BLL.BLL.Interface
+{
+    public interface IChiTietHoaDonBLL
+    {
+        void InsertChiTietHoaDon(ChiTietHoaDonModel ChiTietHoaDon);
+        void DeleteChiTietHoaDon(Guid id);
+        void UpdateChiTietHoaDon(ChiTietHoaDonModel ChiTietHoaDonModel);
+        ChiTietHoaDonModel GetById(Guid id);
+        List<ChiTietHoaDonModel> GetAll();
+    }
+}

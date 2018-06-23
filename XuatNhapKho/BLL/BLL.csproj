@@ -56,7 +56,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\Implement\BaseBLL.cs" />
+    <Compile Include="BLL\Implement\ChiTienBLL.cs" />
+    <Compile Include="BLL\Implement\ChiTietHoaDonBLL.cs" />
+    <Compile Include="BLL\Implement\QuanLySanPhamBLL.cs" />
+    <Compile Include="BLL\Implement\RoleBLL.cs" />
+    <Compile Include="BLL\Implement\SanPhamBLL.cs" />
     <Compile Include="BLL\Implement\UserBLL.cs" />
+    <Compile Include="BLL\Interface\IChiTienBLL.cs" />
+    <Compile Include="BLL\Interface\IChiTietHoaDonBLL.cs" />
+    <Compile Include="BLL\Interface\IQuanLySanPhamBLL.cs" />
+    <Compile Include="BLL\Interface\IRoleBLL.cs" />
+    <Compile Include="BLL\Interface\ISanPhamBLL.cs" />
     <Compile Include="BLL\Interface\IUserBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -11,5 +11,9 @@ namespace BLL.BLL.Interface
     public interface IUserBLL
     {
         void InsertUser(UserModel user);
+        void DeleteUser(Guid id);
+        void UpdateUser(UserModel userModel);
+        UserModel GetById(Guid id);
+        List<UserModel> GetAll();
     }
 }
