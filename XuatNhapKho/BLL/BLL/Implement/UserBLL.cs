@@ -17,5 +17,17 @@ namespace BLL.BLL.Implement
         {
             BaseBLL<User, UserModel>.Insert(userModel);
         }
+        public void DeleteUser(Guid id)
+        {
+            BaseBLL<User, UserModel>.Delete(id);
+        }
+        public void UpdateUser(UserModel userModel)
+        {
+            BaseBLL<User, UserModel>.Update(userModel);
+        }
+        public UserModel GetById(Guid id)
+        {
+            return BaseBLL<User, UserModel>.GetById(id);
+        }
     }
 }

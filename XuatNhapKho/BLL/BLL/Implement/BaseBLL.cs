@@ -2,6 +2,8 @@
 using Model.Interface;
 using Model.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BLL.BLL.Implement
 {
@@ -56,6 +58,16 @@ namespace BLL.BLL.Implement
             K entity = _entityRepository.GetById(id);
             T model = ConvertToModel(entity);
             return model;
+        }
+        public static List<T> GetAll()
+        {
+            var listModel = new List<T>();
+            var listEntity = _entityRepository.GetAll().AsEnumerable();
+            foreach (var entity in listEntity)
+            {
+                listModel.Add(ConvertToModel(entity));
+            }
+            return listModel;
         }
     }
 }
