@@ -17,7 +17,7 @@ namespace Database.Models
             dbset = context.Set<T>();
         }
 
-        public T GetById(int id)
+        public T GetById(Guid id)
         {
             return dbset.Find(id);
         }

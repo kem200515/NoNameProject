@@ -2,16 +2,10 @@
 using Database.Models;
 using Model.Interface;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model.Models
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork<K> : IUnitOfWork<K> where K : class
     {
         private IRepository<User> _userRepository;
         private IRepository<Role> _roleRepository;
@@ -20,6 +14,7 @@ namespace Model.Models
         private IRepository<QuanLyHoaDon> _quanLyHoaDonRepository;
         private IRepository<ChiTietHoaDon> _chiTietHoaDonRepository;
         private IRepository<ChiTien> _chiTienRepository;
+        private IRepository<K> _entityRepository;
 
         private Secrect_DevelopmentEntities _context;
         private bool disposed = false;
@@ -100,6 +95,15 @@ namespace Model.Models
             }
         }
 
+        public IRepository<K> EntityRepository
+        {
+            get
+            {
+                if (_entityRepository == null)
+                    _entityRepository = new Repository<K>(_context);
+                return _entityRepository;
+            }
+        }
 
         protected virtual void Dispose(bool disposing)
         {

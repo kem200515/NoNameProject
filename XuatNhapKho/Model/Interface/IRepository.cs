@@ -8,7 +8,7 @@ namespace Database.Interface
 
     {
 
-        T GetById(int id);
+        T GetById(Guid id);
 
         IQueryable<T> GetAll();
 

@@ -10,6 +10,6 @@ namespace BLL.BLL.Interface
 {
     public interface IUserBLL
     {
-        void SaveUser(UserModel user);
+        void InsertUser(UserModel user);
     }
 }

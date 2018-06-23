@@ -13,20 +13,9 @@ namespace BLL.BLL.Implement
 {
     public class UserBLL : IUserBLL
     {
-        private UnitOfWork _unitOfWork;
-        private IRepository<User> _userRepository;
-        public UserBLL()
+        public void InsertUser(UserModel userModel)
         {
-            if (_unitOfWork == null)
-                _unitOfWork = new UnitOfWork();
-            _userRepository = _unitOfWork.UserRepository;
-        }
-
-        public void SaveUser(UserModel userModel)
-        {
-            User user = BaseBLL<User, UserModel>.ConvertFromModel(userModel);
-            _userRepository.Insert(user);
-            _unitOfWork.Save();
+            BaseBLL<User, UserModel>.Insert(userModel);
         }
     }
 }

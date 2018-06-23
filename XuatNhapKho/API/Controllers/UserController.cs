@@ -17,7 +17,7 @@ namespace API.Controllers
         [Route("User/InsertUser")]
         public void InsertUser(UserModel userModel)
         {
-            _userBLL.SaveUser(userModel);
+            _userBLL.InsertUser(userModel);
         }
     }
 }

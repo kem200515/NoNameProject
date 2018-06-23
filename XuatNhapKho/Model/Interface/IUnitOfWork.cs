@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model.Interface
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork<K> : IDisposable
     {
         IRepository<User> UserRepository { get; }
         IRepository<Role> RoleRepository { get; }
@@ -16,7 +16,7 @@ namespace Model.Interface
         IRepository<QuanLyHoaDon> QuanLyHoaDonRepository { get; }
         IRepository<ChiTietHoaDon> ChiTietHoaDonRepository { get; }
         IRepository<ChiTien> ChiTienRepository { get; }
-
+        IRepository<K> EntityRepository { get; }
         void Save();
     }
 }

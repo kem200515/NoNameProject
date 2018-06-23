@@ -20,7 +20,7 @@ namespace UnitTest
                 LastName = "tran",
                 Password = "123456"
             };
-            _userBLL.SaveUser(userModel);
+            _userBLL.InsertUser(userModel);
         }
     }
 }
