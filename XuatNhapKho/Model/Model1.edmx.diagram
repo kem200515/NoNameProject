@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="Secrect_DevelopmentModel.QuanLySanPham" Width="1.5" PointX="6.75" PointY="4.75" />
         <EntityTypeShape EntityType="Secrect_DevelopmentModel.Role" Width="1.5" PointX="0.75" PointY="7.75" />
         <EntityTypeShape EntityType="Secrect_DevelopmentModel.SanPham" Width="1.5" PointX="2.75" PointY="7.75" />
-        <EntityTypeShape EntityType="Secrect_DevelopmentModel.sysdiagram" Width="1.5" PointX="8.75" PointY="0.75" />
         <EntityTypeShape EntityType="Secrect_DevelopmentModel.User" Width="1.5" PointX="8.75" PointY="3.75" />
         <EntityTypeShape EntityType="Secrect_DevelopmentModel.ChiTien" Width="1.5" PointX="5.375" PointY="8.75" />
       </Diagram>

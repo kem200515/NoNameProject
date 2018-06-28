@@ -34,7 +34,6 @@ namespace Model
         public virtual DbSet<QuanLySanPham> QuanLySanPhams { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<ChiTien> ChiTiens { get; set; }
     
@@ -139,6 +138,19 @@ namespace Model
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<p_User_GetByUsernameAndPassword_Result> p_User_GetByUsernameAndPassword(string username, string password)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("Username", username) :
+                new ObjectParameter("Username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<p_User_GetByUsernameAndPassword_Result>("p_User_GetByUsernameAndPassword", usernameParameter, passwordParameter);
         }
     }
 }
