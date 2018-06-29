@@ -43,6 +43,7 @@ namespace BLL.BLL.Implement
         public UserModel Login(string username, string password)
         {
             var user = _userRepository.Login(username, password);
+            if (user == null) return null;
             return BaseBLL<p_User_GetByUsernameAndPassword_Result, UserModel>.ConvertToModel(user);
         }
     }

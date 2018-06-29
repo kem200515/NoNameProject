@@ -22,20 +22,38 @@ namespace API.Controllers
             if (userModel == null) return;
             _userBLL.InsertUser(userModel);
         }
+
         [HttpPost]
         [Route("User/Login")]
-        public HttpResponseMessage Login(UserModel userModel)
+        public string Login(UserModel userModel)
         {
+            //if (
+            //    userModel == null
+            //    || string.IsNullOrWhiteSpace(userModel.Username)
+            //    || string.IsNullOrWhiteSpace(userModel.Password)
+            //    )
+            //    return new HttpResponseMessage(HttpStatusCode.NoContent);
+            //var response = new HttpResponseMessage();
+            //var user = _userBLL.Login(userModel.Username, userModel.Password);
+
+            //response.Content = new StringContent(user.Id.ToString());
+            //return response;
             if (
                 userModel == null
                 || string.IsNullOrWhiteSpace(userModel.Username)
                 || string.IsNullOrWhiteSpace(userModel.Password)
                 )
-                return new HttpResponseMessage(HttpStatusCode.NoContent);
+                return string.Empty;
             var response = new HttpResponseMessage();
             var user = _userBLL.Login(userModel.Username, userModel.Password);
-            response.Content = new StringContent(user.Id.ToString());
-            return response;
+            if (user == null) return string.Empty;
+            return user.Id.ToString();
+        }
+        [HttpPost]
+        [Route("User/GetUserById")]
+        public UserModel GetUserById(string userID)
+        {
+            return _userBLL.GetById(Guid.Parse(userID));
         }
     }
 }
