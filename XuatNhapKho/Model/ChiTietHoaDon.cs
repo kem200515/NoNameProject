@@ -15,7 +15,7 @@ namespace Model
     public partial class ChiTietHoaDon
     {
         public System.Guid Id { get; set; }
-        public System.Guid SanPhamId { get; set; }
+        public System.Guid QuanLyHoaDonId { get; set; }
         public Nullable<System.DateTime> NgayBan { get; set; }
         public Nullable<int> SoTam { get; set; }
         public Nullable<decimal> KichThuoc { get; set; }

@@ -24,7 +24,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="SanPhamId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="QuanLyHoaDonId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="NgayBan" Type="datetime" />
           <Property Name="SoTam" Type="int" />
           <Property Name="KichThuoc" Type="decimal" Precision="18" Scale="2" />
@@ -101,6 +101,7 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="SanPhamId" Type="uniqueidentifier" />
           <Property Name="ChiTietHoaDonId" Type="uniqueidentifier" />
+          <Property Name="TongTien" Type="decimal" Precision="18" Scale="2" />
           <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
           <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
@@ -149,6 +150,16 @@
           <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -178,6 +189,7 @@
           <EntitySet Name="QuanLySanPham" EntityType="Self.QuanLySanPham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -215,6 +227,11 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="p_User_GetByUsernameAndPassword" ReturnType="Collection(Secrect_DevelopmentModel.p_User_GetByUsernameAndPassword_Result)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="ChiTiens" EntityType="Secrect_DevelopmentModel.ChiTien" />
           <EntitySet Name="ChiTietHoaDons" EntityType="Secrect_DevelopmentModel.ChiTietHoaDon" />
           <EntitySet Name="H_NhapXuatTon" EntityType="Secrect_DevelopmentModel.H_NhapXuatTon" />
           <EntitySet Name="NhapXuatTons" EntityType="Secrect_DevelopmentModel.NhapXuatTon" />
@@ -222,19 +239,42 @@
           <EntitySet Name="QuanLySanPhams" EntityType="Secrect_DevelopmentModel.QuanLySanPham" />
           <EntitySet Name="Roles" EntityType="Secrect_DevelopmentModel.Role" />
           <EntitySet Name="SanPhams" EntityType="Secrect_DevelopmentModel.SanPham" />
+          <EntitySet Name="sysdiagrams" EntityType="Secrect_DevelopmentModel.sysdiagram" />
           <EntitySet Name="Users" EntityType="Secrect_DevelopmentModel.User" />
-          <EntitySet Name="ChiTiens" EntityType="Secrect_DevelopmentModel.ChiTien" />
-          <FunctionImport Name="p_User_GetByUsernameAndPassword" ReturnType="Collection(Secrect_DevelopmentModel.p_User_GetByUsernameAndPassword_Result)">
-            <Parameter Name="Username" Mode="In" Type="String" />
-            <Parameter Name="Password" Mode="In" Type="String" />
-          </FunctionImport>
           </EntityContainer>
+        <ComplexType Name="p_User_GetByUsernameAndPassword_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="RoleID" Nullable="true" />
+          <Property Type="Guid" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+          <Property Type="Guid" Name="UpdatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="ChiTien">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SoTien" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MoTa" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NgayChiTien" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="ChiTietHoaDon">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="SanPhamId" Type="Guid" Nullable="false" />
+          <Property Name="QuanLyHoaDonId" Type="Guid" Nullable="false" />
           <Property Name="NgayBan" Type="DateTime" Precision="3" />
           <Property Name="SoTam" Type="Int32" />
           <Property Name="KichThuoc" Type="Decimal" Precision="18" Scale="2" />
@@ -311,6 +351,7 @@
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="SanPhamId" Type="Guid" />
           <Property Name="ChiTietHoaDonId" Type="Guid" />
+          <Property Name="TongTien" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="CreatedBy" Type="Guid" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
@@ -359,6 +400,16 @@
           <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Status" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -375,39 +426,44 @@
           <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Status" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="ChiTien">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="SoTien" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="MoTa" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="NgayChiTien" Type="DateTime" Precision="3" />
-          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
-          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
-          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Status" Type="Int32" Nullable="false" />
-        </EntityType>
-        <ComplexType Name="p_User_GetByUsernameAndPassword_Result">
-          <Property Type="Guid" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
-          <Property Type="Guid" Name="RoleID" Nullable="true" />
-          <Property Type="Guid" Name="CreatedBy" Nullable="false" />
-          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
-          <Property Type="Guid" Name="UpdatedBy" Nullable="false" />
-          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="23" />
-          <Property Type="Int32" Name="Status" Nullable="false" />
-        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Secrect_DevelopmentModelStoreContainer" CdmEntityContainer="Secrect_DevelopmentEntities">
+          <FunctionImportMapping FunctionImportName="p_User_GetByUsernameAndPassword" FunctionName="Secrect_DevelopmentModel.Store.p_User_GetByUsernameAndPassword">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Secrect_DevelopmentModel.p_User_GetByUsernameAndPassword_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ChiTiens">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.ChiTien">
+              <MappingFragment StoreEntitySet="ChiTien">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="NgayChiTien" ColumnName="NgayChiTien" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="SoTien" ColumnName="SoTien" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ChiTietHoaDons">
             <EntityTypeMapping TypeName="Secrect_DevelopmentModel.ChiTietHoaDon">
               <MappingFragment StoreEntitySet="ChiTietHoaDon">
@@ -421,7 +477,7 @@
                 <ScalarProperty Name="KichThuoc" ColumnName="KichThuoc" />
                 <ScalarProperty Name="SoTam" ColumnName="SoTam" />
                 <ScalarProperty Name="NgayBan" ColumnName="NgayBan" />
-                <ScalarProperty Name="SanPhamId" ColumnName="SanPhamId" />
+                <ScalarProperty Name="QuanLyHoaDonId" ColumnName="QuanLyHoaDonId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -494,6 +550,7 @@
                 <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
                 <ScalarProperty Name="ChiTietHoaDonId" ColumnName="ChiTietHoaDonId" />
                 <ScalarProperty Name="SanPhamId" ColumnName="SanPhamId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -545,6 +602,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Secrect_DevelopmentModel.User">
               <MappingFragment StoreEntitySet="User">
@@ -562,38 +630,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ChiTiens">
-            <EntityTypeMapping TypeName="Secrect_DevelopmentModel.ChiTien">
-              <MappingFragment StoreEntitySet="ChiTien">
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
-                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="NgayChiTien" ColumnName="NgayChiTien" />
-                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-                <ScalarProperty Name="SoTien" ColumnName="SoTien" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="p_User_GetByUsernameAndPassword" FunctionName="Secrect_DevelopmentModel.Store.p_User_GetByUsernameAndPassword">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Secrect_DevelopmentModel.p_User_GetByUsernameAndPassword_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
-                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

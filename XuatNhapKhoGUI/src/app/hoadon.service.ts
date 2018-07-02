@@ -4,11 +4,9 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class HoadonService {
 
   constructor(private http: HttpClient) { }
 
-  getUserById(userId: string) {
-    return this.http.get('http://localhost:54198/User/GetUserById');
-  }
+
 }

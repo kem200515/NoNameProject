@@ -1,0 +1,60 @@
+<body>
+
+  <div>
+    <label for="">Tên sản phẩm</label>
+    <select #selectElem (change)="selectedSanPham(selectElem.value)">
+      <option *ngFor="let sanpham of listSanPham" [value]="sanpham.Id">
+        {{sanpham.TenHang}}
+      </option>
+    </select>
+    <br>
+    <label for="">Số tấm</label>
+    <input type="text">
+    <br>
+    <label for="">Chiều dài</label>
+    <input type="text">
+    <br>
+    <label for="">Số tấm</label>
+    <input type="text">
+    <br>
+    <label for="">Thành tiền</label>
+    <input type="text">
+    <br>
+    <button>Thêm hàng</button>
+  </div>
+
+  <div id="wrapper">
+    <h1>Hóa đơn</h1>
+
+    <table id="keywords" cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th>
+            <span>STT</span>
+          </th>
+          <th>
+            <span>Tên sản phẩm</span>
+          </th>
+          <th>
+            <span>Chiều dài</span>
+          </th>
+          <th>
+            <span>Khổ</span>
+          </th>
+          <th>
+            <span>Số tấm</span>
+          </th>
+          <th>
+            <span>Số m2</span>
+          </th>
+          <th>
+            <span>Thành tiền</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+</body>

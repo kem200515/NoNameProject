@@ -10,21 +10,29 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
 import { UserService } from './user.service';
 import { AuthService } from './auth.service';
+import { HoadonComponent } from './hoadon/hoadon.component';
+import { NhaphangComponent } from './nhaphang/nhaphang.component';
+import { QuanlysanphamComponent } from './quanlysanpham/quanlysanpham.component';
+import { HoadonService } from './hoadon.service';
+import { SanphamService } from './sanpham.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    HoadonComponent,
+    NhaphangComponent,
+    QuanlysanphamComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
       {
-        path: 'login',
-        component: LoginComponent
+        path: 'home',
+        component: HomeComponent
       },
       {
         path: 'admin',
@@ -32,12 +40,21 @@ import { AuthService } from './auth.service';
         canActivate: [AuthGuard]
       },
       {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
         path: '',
         component: LoginComponent
+      },
+      {
+        path: 'hoadon',
+        component: HoadonComponent
       }
+
     ])
   ],
-  providers: [AuthService, UserService, AuthGuard],
+  providers: [AuthService, UserService, AuthGuard, HoadonService, SanphamService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
