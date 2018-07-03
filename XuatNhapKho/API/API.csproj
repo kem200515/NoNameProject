@@ -205,7 +205,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ChiTietHoaDonController.cs" />
-    <Compile Include="Controllers\ChiTietHoaDonM.cs" />
     <Compile Include="Controllers\QuanLyHoaDonController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Controllers\UserController.cs" />

@@ -1,6 +1,7 @@
 ﻿using BLL.BLL.Implement;
 using BLL.BLL.Interface;
 using Models.Models;
+using Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,10 @@ namespace API.Controllers
         private IChiTietHoaDonBLL _chiTietHoaDonBLL = new ChiTietHoaDonBLL();
         [HttpPost]
         [Route("ChiTietHoaDon/InsertChiTietHoaDon")]
-        public void InsertChiTietHoaDon(ChiTietHoaDonModel chiTietHoaDonModel)
+        public void InsertChiTietHoaDon(ListHoaDon listHoaDon)
         {
-            _chiTietHoaDonBLL.InsertChiTietHoaDon(chiTietHoaDonModel);
+            if (listHoaDon == null || listHoaDon.listHoaDon == null || listHoaDon.listHoaDon.Count == 0) return;
+
         }
     }
 }

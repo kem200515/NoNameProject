@@ -16,11 +16,13 @@ namespace Model
     {
         public System.Guid Id { get; set; }
         public System.Guid QuanLyHoaDonId { get; set; }
-        public Nullable<System.DateTime> NgayBan { get; set; }
+        public Nullable<System.Guid> SanPhamId { get; set; }
+        public Nullable<decimal> ChieuDai { get; set; }
         public Nullable<int> SoTam { get; set; }
-        public Nullable<decimal> KichThuoc { get; set; }
-        public Nullable<int> SoLuong { get; set; }
+        public Nullable<decimal> Som2 { get; set; }
+        public Nullable<decimal> Somd { get; set; }
         public Nullable<decimal> DonGia { get; set; }
+        public Nullable<decimal> ThanhTien { get; set; }
         public System.Guid CreatedBy { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public System.Guid UpdatedBy { get; set; }

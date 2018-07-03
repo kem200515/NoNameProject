@@ -15,8 +15,7 @@ namespace Model
     public partial class QuanLyHoaDon
     {
         public System.Guid Id { get; set; }
-        public Nullable<System.Guid> SanPhamId { get; set; }
-        public Nullable<System.Guid> ChiTietHoaDonId { get; set; }
+        public Nullable<System.DateTime> NgayThucHien { get; set; }
         public Nullable<decimal> TongTien { get; set; }
         public System.Guid CreatedBy { get; set; }
         public System.DateTime CreatedOn { get; set; }
