@@ -15,6 +15,7 @@ import { NhaphangComponent } from './nhaphang/nhaphang.component';
 import { QuanlysanphamComponent } from './quanlysanpham/quanlysanpham.component';
 import { HoadonService } from './hoadon.service';
 import { SanphamService } from './sanpham.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SanphamService } from './sanpham.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path: 'home',

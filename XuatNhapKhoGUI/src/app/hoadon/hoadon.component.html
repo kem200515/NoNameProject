@@ -2,25 +2,31 @@
 
   <div>
     <label for="">Tên sản phẩm</label>
-    <select #selectElem (change)="selectedSanPham(selectElem.value)">
-      <option *ngFor="let sanpham of listSanPham" [value]="sanpham.Id">
+    <select #selectElem (change)="SelectedSanPham(selectElem.value)">
+      <option *ngFor="let sanpham of listSanPham" [value]="sanpham.TenHang">        
         {{sanpham.TenHang}}
       </option>
     </select>
     <br>
-    <label for="">Số tấm</label>
-    <input type="text">
-    <br>
     <label for="">Chiều dài</label>
-    <input type="text">
+    <input type="text" [(ngModel)]="hoadon.ChieuDai">
+    <br>
+    <label for="">Khổ</label>
+    <input type="text" [(ngModel)]="hoadon.Kho">
     <br>
     <label for="">Số tấm</label>
-    <input type="text">
+    <input type="text" [(ngModel)]="hoadon.SoTam">
+    <br>
+    <label for="">Số m2</label>
+    <input type="text" [(ngModel)]="hoadon.Som2">
+    <br>
+    <label for="">Đơn giá</label>
+    <input type="text" [(ngModel)]="hoadon.DonGia">
     <br>
     <label for="">Thành tiền</label>
-    <input type="text">
+    <input type="text" [(ngModel)]="hoadon.ThanhTien">
     <br>
-    <button>Thêm hàng</button>
+    <button (click)="ThemHoaDon(hoadon)">Thêm hàng</button>
   </div>
 
   <div id="wrapper">
@@ -53,7 +59,11 @@
         </tr>
       </thead>
       <tbody>
-
+        <tr *ngFor="let item of listHoaDon">
+          <td></td>
+          <td>{{item.TenHang}}</td>
+          <td>{{item.ChieuDai}}</td>
+        </tr>
       </tbody>
     </table>
   </div>
