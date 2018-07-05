@@ -23,6 +23,7 @@ namespace Models.ViewModels
             listHoaDon = new List<HoaDonViewModel>();
         }
         public List<HoaDonViewModel> listHoaDon;
+        public long NgayThucHienTimestamp;
         public DateTime NgayThucHien;
         public decimal TongTien;
     }

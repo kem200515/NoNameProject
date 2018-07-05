@@ -19,7 +19,7 @@ namespace API.Controllers
         public void InsertChiTietHoaDon(ListHoaDon listHoaDon)
         {
             if (listHoaDon == null || listHoaDon.listHoaDon == null || listHoaDon.listHoaDon.Count == 0) return;
-
+            _chiTietHoaDonBLL.InsertListHoaDon(listHoaDon);
         }
     }
 }
