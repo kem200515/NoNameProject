@@ -40,14 +40,15 @@ export class HoadonComponent implements OnInit {
   public ThemHoaDon(hoadon) {
     const clone = Object.assign({}, hoadon);
     this.listHoaDon.push(clone);
-    console.log(this.listHoaDon);
-  }
-  public ThanhToan() {
-    this.thanhToanHoaDon.listHoaDon = this.listHoaDon;
     this.thanhToanHoaDon.TongTien = 0;
     for (let i = 0; i < this.listHoaDon.length; i++) {
       this.thanhToanHoaDon.TongTien = this.listHoaDon[i].ThanhTien + this.thanhToanHoaDon.TongTien;
     }
+
+    console.log(this.thanhToanHoaDon.TongTien);
+  }
+  public ThanhToan() {
+    this.thanhToanHoaDon.listHoaDon = this.listHoaDon;
     console.log(this.thanhToanHoaDon);
     this.hoaDonService.InserListHoaDon(this.thanhToanHoaDon).subscribe(data => {
       console.log(data);
@@ -64,6 +65,6 @@ export class HoadonComponent implements OnInit {
   public ChangeThongSo() {
     this.hoadon.Som2 = this.hoadon.ChieuDai * this.hoadon.Kho * this.hoadon.SoTam;
     this.hoadon.ThanhTien = this.hoadon.Som2 * this.hoadon.DonGia;
-    console.log(this.hoadon.Som2);
+
   }
 }

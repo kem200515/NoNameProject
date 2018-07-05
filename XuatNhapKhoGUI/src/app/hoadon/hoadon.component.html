@@ -26,8 +26,10 @@
     <label for="">Thành tiền</label>
     <input type="text" disabled [(ngModel)]="hoadon.ThanhTien">
     <br>
-    <button (click)="ThemHoaDon(hoadon)">Thêm hàng</button>
+    <button (click)="ThemHoaDon(hoadon)">Thêm hàng</button><br>
     <button (click)="ThanhToan()">Thanh toán</button>
+    <label for="">Tổng tiền hóa đơn</label>
+    <input type="text" disabled [(ngModel)]="thanhToanHoaDon.TongTien">
   </div>
 
   <div id="wrapper">
