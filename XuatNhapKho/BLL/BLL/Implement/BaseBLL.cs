@@ -41,6 +41,15 @@ namespace BLL.BLL.Implement
             _entityRepository.Insert(entity);
             _unitOfWork.Save();
         }
+        public static void InsertList(List<T> listModels)
+        {
+            foreach (var model in listModels)
+            {
+                K entity = ConvertFromModel(model);
+                _entityRepository.Insert(entity);
+            }
+            _unitOfWork.Save();
+        }
         public static void Delete(Guid id)
         {
             K entity = _entityRepository.GetById(id);

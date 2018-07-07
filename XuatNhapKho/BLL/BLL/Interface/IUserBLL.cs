@@ -15,5 +15,6 @@ namespace BLL.BLL.Interface
         void UpdateUser(UserModel userModel);
         UserModel GetById(Guid id);
         List<UserModel> GetAll();
+        UserModel Login(string username, string password);
     }
 }

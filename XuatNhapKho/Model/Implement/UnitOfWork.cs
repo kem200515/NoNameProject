@@ -47,7 +47,7 @@ namespace Model.Models
         }
 
         public void Save()
-        {
+        {            
             _context.SaveChanges();
         }
     }

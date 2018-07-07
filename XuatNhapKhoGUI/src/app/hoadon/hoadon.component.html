@@ -1,0 +1,81 @@
+<body>
+
+  <div>
+    <label for="">Tên sản phẩm</label>
+    <select #selectElem (change)="ChangeSanPham()" [(ngModel)]="sanpham">
+      <option *ngFor="let sanpham of listSanPham" [ngValue]="sanpham">
+        {{sanpham.TenHang}}
+      </option>
+    </select>
+    <br>
+    <label for="">Chiều dài</label>
+    <input (blur)="ChangeThongSo()" type="text" [(ngModel)]="hoadon.ChieuDai">
+    <br>
+    <label for="">Khổ</label>
+    <input type="text" disabled [(ngModel)]="hoadon.Kho">
+    <br>
+    <label for="">Số tấm</label>
+    <input (blur)="ChangeThongSo()" type="text" [(ngModel)]="hoadon.SoTam">
+    <br>
+    <label for="">Số m2</label>
+    <input type="text" disabled [(ngModel)]="hoadon.Som2">
+    <br>
+    <label for="">Đơn giá</label>
+    <input type="text" disabled [(ngModel)]="hoadon.DonGia">
+    <br>
+    <label for="">Thành tiền</label>
+    <input type="text" disabled [(ngModel)]="hoadon.ThanhTien">
+    <br>
+    <button (click)="ThemHoaDon(hoadon)">Thêm hàng</button><br>
+    <button (click)="ThanhToan()">Thanh toán</button>
+    <label for="">Tổng tiền hóa đơn</label>
+    <input type="text" disabled [(ngModel)]="thanhToanHoaDon.TongTien">
+  </div>
+
+  <div id="wrapper">
+    <h1>Hóa đơn</h1>
+
+    <table id="keywords" cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th>
+            <span>STT</span>
+          </th>
+          <th>
+            <span>Tên hàng</span>
+          </th>
+          <th>
+            <span>Chiều dài</span>
+          </th>
+          <th>
+            <span>Khổ</span>
+          </th>
+          <th>
+            <span>Số tấm</span>
+          </th>
+          <th>
+            <span>Số m2</span>
+          </th>
+          <th>
+            <span>Đơn giá</span>
+          </th>
+          <th>
+            <span>Thành tiền</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listHoaDon; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{item.TenHang}}</td>
+          <td>{{item.ChieuDai}}</td>
+          <td>{{item.Kho}}</td>
+          <td>{{item.SoTam}}</td>
+          <td>{{item.Som2}}</td>
+          <td>{{item.DonGia}}</td>
+          <td>{{item.ThanhTien}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

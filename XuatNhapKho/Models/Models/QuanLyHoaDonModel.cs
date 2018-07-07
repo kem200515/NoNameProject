@@ -8,7 +8,7 @@ namespace Models.Models
 {
     public class QuanLyHoaDonModel:BaseModel
     {
-        public Nullable<System.Guid> SanPhamId { get; set; }
-        public Nullable<System.Guid> ChiTietHoaDonId { get; set; }
+        public Nullable<System.DateTime> NgayThucHien { get; set; }
+        public Nullable<decimal> TongTien { get; set; }
     }
 }

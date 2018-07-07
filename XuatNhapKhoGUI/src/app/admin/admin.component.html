@@ -1,0 +1,53 @@
+<div class="header">
+  <div class="logo">
+    <i class="fa fa-user"></i>
+    <b style="margin-left: 1em">Quản Lý Tồn</b>
+  </div>
+</div>
+<div class="main">
+  <div *ngIf="type==1">
+
+    <app-hoadon></app-hoadon>
+  </div>
+  <div *ngIf="type==2">
+    <app-nhaphang></app-nhaphang>
+  </div>
+  <div *ngIf="type==3">
+    <app-quanlysanpham></app-quanlysanpham>
+  </div>
+</div>
+<div class="sidebar">
+  <ul>
+    <li>
+      <a (click)="ChangeType(1)">
+        <i class="fa fa-desktop"></i>
+        <span>Xuất hóa đơn</span>
+      </a>
+    </li>
+    <li>
+      <a (click)="ChangeType(2)">
+        <i class="fa fa-server"></i>
+        <span>Nhập sản phẩm</span>
+      </a>
+    </li>
+    <li>
+      <a (click)="ChangeType(3)">
+        <i class="fa fa-server"></i>
+        <span>Quản lý sản phẩm</span>
+      </a>
+    </li>
+    <li>
+      <a (click)="ChangeType(4)">
+        <i class="fa fa-calendar"></i>
+        <span>Thống kê hàng ngày</span>
+      </a>
+    </li>
+
+    <li>
+      <a (click)="ChangeType(5)">
+        <i class="fa fa-table"></i>
+        <span>Thống kê hàng tháng</span>
+      </a>
+    </li>
+  </ul>
+</div>
