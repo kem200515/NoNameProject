@@ -8,6 +8,6 @@ export class SanphamService {
 
   constructor(private http: HttpClient) { }
   GetAll() {
-    return this.http.get('http://localhost:54198/SanPham/GetAll');
+    return this.http.get('http://118.68.215.45:12345/SanPham/GetAll');
   }
 }

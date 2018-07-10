@@ -9,6 +9,6 @@ export class HoadonService {
   constructor(private http: HttpClient) { }
 
   InserListHoaDon(listHoaDon) {
-    return this.http.post('http://localhost:54198/ChiTietHoaDon/InsertChiTietHoaDon', listHoaDon);
+    return this.http.post('http://118.68.215.45:12345/ChiTietHoaDon/InsertChiTietHoaDon', listHoaDon);
   }
 }

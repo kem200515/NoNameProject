@@ -9,6 +9,8 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUserById(userId: string) {
-    return this.http.get('http://localhost:54198/User/GetUserById');
+    return this.http.get('http://118.68.215.45:12345/User/GetUserById');
   }
 }
+
+

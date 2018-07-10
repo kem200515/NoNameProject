@@ -29,7 +29,7 @@ export class AuthService {
       Username: username,
       Password: password
     };
-    return this.http.post('http://localhost:54198/User/Login', userModel
+    return this.http.post('http://118.68.215.45:12345/User/Login', userModel
     );
   }
 }
