@@ -1,4 +1,7 @@
-﻿using Models.ViewModels;
+﻿using BLL.BLL.Implement;
+using BLL.BLL.Interface;
+using Models.Models;
+using Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +13,13 @@ namespace API.Controllers
 {
     public class QuanLyHoaDonController : ApiController
     {
-        
+        private IQuanLyHoaDonBLL _quanLyHoaDonBLL = new QuanLyHoaDonBLL();
+        [HttpGet]
+        [Route("QuanLyHoaDon/GetAll")]
+        public List<QuanLyHoaDonModel> GetAll()
+        {
+            var listQuanLyHoaDon = _quanLyHoaDonBLL.GetAll();
+            return listQuanLyHoaDon;
+        }
     }
 }

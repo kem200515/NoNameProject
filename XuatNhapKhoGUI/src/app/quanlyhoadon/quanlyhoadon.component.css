@@ -63,10 +63,10 @@ h1 {
 /** page structure **/
 #wrapper {
   display: block;
-  width: 850px;
+  width: 1400px;
   background: #fff;
   margin: 0 auto;
-  margin-left: 40em;
+  margin-left: 20em;
   padding: 10px 17px;
   -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
 }

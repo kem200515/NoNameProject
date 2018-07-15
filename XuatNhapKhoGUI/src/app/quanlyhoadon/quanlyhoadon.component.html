@@ -1,0 +1,33 @@
+<body>
+
+  <div id="wrapper">
+    <h1>Quán lý hoá đơn</h1>
+
+    <table id="keywords" cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th>
+            <span>STT</span>
+          </th>
+          <th>
+            <span>Mã hóa đơn</span>
+          </th>
+          <th>
+            <span>Ngày thực hiện</span>
+          </th>
+          <th>
+            <span>Tổng tiền</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listQuanLyHoaDon; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{item.Id}}</td>
+          <td>{{item.NgayThucHien}}</td>
+          <td>{{item.TongTien}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

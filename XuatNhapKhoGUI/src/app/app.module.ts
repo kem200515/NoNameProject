@@ -11,11 +11,11 @@ import { AuthGuard } from './auth.guard';
 import { UserService } from './user.service';
 import { AuthService } from './auth.service';
 import { HoadonComponent } from './hoadon/hoadon.component';
-import { NhaphangComponent } from './nhaphang/nhaphang.component';
 import { QuanlysanphamComponent } from './quanlysanpham/quanlysanpham.component';
 import { HoadonService } from './hoadon.service';
 import { SanphamService } from './sanpham.service';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { QuanlyhoadonComponent } from './quanlyhoadon/quanlyhoadon.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,8 @@ import {FormsModule} from '@angular/forms';
     AdminComponent,
     HomeComponent,
     HoadonComponent,
-    NhaphangComponent,
-    QuanlysanphamComponent
+    QuanlysanphamComponent,
+    QuanlyhoadonComponent
   ],
   imports: [
     BrowserModule,
