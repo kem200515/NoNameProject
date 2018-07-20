@@ -7,9 +7,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   private loggedInStatus = JSON.parse(localStorage.getItem('userId')) || false;
+  private baseAPI = 'http://xuatnhapkho.hopto.org:12345/';
+  // private baseAPI = 'http://localhost:54198/';
   private userId = '';
   constructor(private http: HttpClient) { }
 
+  getBaseAPI() {
+    return this.baseAPI;
+  }
   setLoggedIn(value: boolean) {
     this.loggedInStatus = value;
     localStorage.setItem('userId', 'true');
@@ -29,7 +34,7 @@ export class AuthService {
       Username: username,
       Password: password
     };
-    return this.http.post('http://localhost:54198/User/Login', userModel
+    return this.http.post(this.baseAPI + 'User/Login', userModel
     );
   }
 }
